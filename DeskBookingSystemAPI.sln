@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskBookingSystemAPI", "DeskBookingSystemAPI\DeskBookingSystemAPI.csproj", "{0965E4CD-5127-4734-896E-0F8F9AAA6734}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{1A216547-4464-48FA-A7E8-2FB91FED06C3}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ReactUI", "ReactUI\ReactUI.esproj", "{F5B64E2E-CD07-4820-B77E-328C393A86E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0965E4CD-5127-4734-896E-0F8F9AAA6734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0965E4CD-5127-4734-896E-0F8F9AAA6734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0965E4CD-5127-4734-896E-0F8F9AAA6734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0965E4CD-5127-4734-896E-0F8F9AAA6734}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A216547-4464-48FA-A7E8-2FB91FED06C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A216547-4464-48FA-A7E8-2FB91FED06C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A216547-4464-48FA-A7E8-2FB91FED06C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A216547-4464-48FA-A7E8-2FB91FED06C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B64E2E-CD07-4820-B77E-328C393A86E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5B64E2E-CD07-4820-B77E-328C393A86E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5B64E2E-CD07-4820-B77E-328C393A86E8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F5B64E2E-CD07-4820-B77E-328C393A86E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5B64E2E-CD07-4820-B77E-328C393A86E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B64E2E-CD07-4820-B77E-328C393A86E8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7882436B-48CB-406C-A482-28A5AD4E52BF}
+	EndGlobalSection
+EndGlobal
