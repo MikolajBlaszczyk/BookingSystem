@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class UpdateData : IUpdateData
+    public class UpdateData : IUpdateData
     {
         public IDataAccess DataAccess { get; set; }
 
-        public UpdateData()
+        public UpdateData(IDataAccess dataAccess)
         {
-            DataAccess = new DataAccess();
+            DataAccess = dataAccess;
         }
 
         public async Task LocAllReservedUpdateAsync(bool reserved, int locationID)
@@ -27,10 +27,11 @@ namespace DataAccess
             await DataAccess.PostDataAsync<object>(command, new { NoDesk = numberOfDesk, ID = locationID }); // await? 
         }
 
-        public async Task DeskUpdateAsync(bool reserved, int UserId, int DeskId)
+        public async Task DeskUpdateAsync(bool reserved, int DeskId)
         {
-            string command = "exec [dbo].[spDeskUpdate] @Reserved, @UserID, @ID";
-            await DataAccess.PostDataAsync<object>(command, new { Reserved = reserved, UserID = UserId, ID = DeskId });
+            string command = "exec [dbo].[spDeskUpdate] @Reserved, @ID";
+            await DataAccess.PostDataAsync<object>(command, new { Reserved = reserved, ID = DeskId });
         }
+
     }
 }

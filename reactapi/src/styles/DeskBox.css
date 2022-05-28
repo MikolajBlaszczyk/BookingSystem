@@ -1,0 +1,40 @@
+.desk{
+    display: flex;
+    flex-direction: column;
+}
+
+.desk input{
+    margin: 5px 0;
+}
+
+.controls-desk{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.special-div{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+.special-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    margin: 0;
+}
+.special-div button{
+    background-color: rgb(18, 3, 54);
+    margin-bottom: 20px;
+    margin: 0;
+}
+.controls-desk input{
+    margin: 20px 0;
+}
+
+.swap{
+    margin: 20px 20px;
+    background-color: #09bbd6 !important;
+}

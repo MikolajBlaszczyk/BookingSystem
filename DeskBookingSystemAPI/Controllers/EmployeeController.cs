@@ -14,11 +14,11 @@ namespace DeskBookingSystemAPI.Controllers
     {
 
         public EveryoneController EveryoneController { get; set; }
-        public DataProcessor DataProcessor { get; set; }
-        public EmployeeController()
+        public IDataProcessor DataProcessor { get; set; }
+        public EmployeeController(EveryoneController everyoneController, IDataProcessor dataProcessor)
         {
-            EveryoneController = new EveryoneController();
-            DataProcessor = new DataProcessor();
+            EveryoneController = everyoneController;
+            DataProcessor = dataProcessor;
         }
         
         //filtering
@@ -36,7 +36,7 @@ namespace DeskBookingSystemAPI.Controllers
         //booking
         [HttpPut("desk/book/{id}/{startDate}/{endDate}")]
         [Authorize(Roles = "Admin,Employee")]
-        //TODO should add a specified behavior when i am the one who booked it
+       
         public async Task<IActionResult> BookDesk(int id, string startDate, string endDate)
         {
             
@@ -77,7 +77,7 @@ namespace DeskBookingSystemAPI.Controllers
             }
             return BadRequest("You can't book a desk for more than 7 days");
         }
-        //swapping TODO!!!
+        //swapping 
         [HttpPut("desk/book/change/{oldID}/{newID}/{startDate}/{endDate}/{resID}")]
         [Authorize(Roles = "Admin,Employee")]
         public async Task<IActionResult> SwapDesks(int oldID, int newID, string startDate, string endDate, int resID)
@@ -112,9 +112,9 @@ namespace DeskBookingSystemAPI.Controllers
             reservations = reservations.Where(x => x.DeskID == newID).ToList();
             if (((edDate - stDate).Days <= 7) && (oldstDate - DateTime.Now).Days > 0)
             {
-                    await DataProcessor.DeleteReservation(list.FirstOrDefault(x => x.ID == resID).ID);
-                    await DataProcessor.InsertDeskReservation(userID, newID, startDate, endDate);
-                    return Ok("Reservation Changed");
+                await DataProcessor.DeleteReservation(list.FirstOrDefault(x => x.ID == resID).ID);
+                await DataProcessor.InsertDeskReservation(userID, newID, startDate, endDate);
+                return Ok("Reservation Changed");
             }
             else if((edDate - stDate).Days > 7)
             {
@@ -126,7 +126,15 @@ namespace DeskBookingSystemAPI.Controllers
             }
         }
 
-        public async Task<bool> CheckReservationDays(int userID,DateTime newStart, DateTime newEnd, int deskID)
+        [HttpDelete("Delete/{id}")]
+        [Authorize(Roles ="Admin,Employee")]
+        public async Task<IActionResult> DeleteReservation(int id)
+        {
+            await DataProcessor.DeleteReservation(id);
+            return Ok("reservation deleted");
+        }
+
+        protected async Task<bool> CheckReservationDays(int userID,DateTime newStart, DateTime newEnd, int deskID)
         {
             var json = await DataProcessor.GetAllReservationsAdmin();
             var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(json);

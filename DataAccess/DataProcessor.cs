@@ -8,27 +8,32 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class DataProcessor
+    public class DataProcessor : IDataProcessor
     {
         internal IGetData GetData { get; set; }
         internal IUpdateData UpdateData { get; set; }
         internal IInsertData InsertData { get; set; }
 
         internal IDeleteData DeleteData { get; set; }
-        public DataProcessor()
+        public DataProcessor(IGetData getData, IUpdateData updateData, IInsertData insertData, IDeleteData deleteData)
         {
-            GetData = new GetData();
-            UpdateData = new UpdateData(); 
-            InsertData = new InsertData();
-            DeleteData = new DeleteData();
+            GetData = getData;
+            UpdateData = updateData;
+            InsertData = insertData;
+            DeleteData = deleteData;
         }
 
-        
+
         public async Task<string> GetAllLocations()
         {
             var obj = await GetData.GetAllLocationsAsync();
             string json = JsonConvert.SerializeObject(obj);
             return json;
+        }
+
+        public async Task UpdateDesk(bool reserved, int deskID)
+        {
+            await UpdateData.DeskUpdateAsync(reserved, deskID);
         }
 
         public async Task<string> GetAllDesks()
@@ -37,7 +42,7 @@ namespace DataAccess
             string json = JsonConvert.SerializeObject(obj);
             return json;
         }
-        
+
         public async Task AddLocation(string address, string city)
         {
             await InsertData.InsertLocation(address, city);
@@ -47,7 +52,7 @@ namespace DataAccess
         {
             await InsertData.InsertDesk(position, monitors, locationID);
         }
-        
+
         public async Task DeleteLocation(int locationID)
         {
             await DeleteData.DeleteLocation(locationID);
@@ -62,7 +67,7 @@ namespace DataAccess
         {
             await DeleteData.DeleteReservation(reservationID);
         }
-        
+
         public async Task<string> GetSpecifiedDesk(int deskID)
         {
             var obj = GetData.GetSpecifiedDesk(deskID);
@@ -70,7 +75,7 @@ namespace DataAccess
             return json;
         }
 
-        public async Task UpdateNumberOfDesks(int numberOfDesks,int locationID)
+        public async Task UpdateNumberOfDesks(int numberOfDesks, int locationID)
         {
             await UpdateData.LocNumberUpdateAsync(numberOfDesks, locationID);
         }

@@ -21,6 +21,7 @@ export default function Login(props) {
     }
     function handleSubmit(e) {
         e.preventDefault();
+        let token;
         localStorage.setItem("Login", loginParams.Login)
         fetch("/api/Login",
             {
@@ -34,7 +35,8 @@ export default function Login(props) {
             .then(res => res.text())
             .then(data => {
                 if (data != "") {
-                    localStorage.setItem("Jwt", data)
+                    localStorage.setItem("Jwt", data);
+                    token = data;
                     return data;
                 }
                 else {
@@ -49,7 +51,22 @@ export default function Login(props) {
                     throw new Error('something went wrong');
                 }
             })
-            .catch(err => console.log(err));
+            .then(() => {
+                fetch(`/api/Everyone/Users/${loginParams.Login}`,
+                    {
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            "Content-type": "application/json"
+                        },
+                        mode: 'cors',
+                        method: "GET",
+                    }).then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem("Role", data.Role)
+                    })
+            })
+            .catch(err => err);
+
 
     }
 

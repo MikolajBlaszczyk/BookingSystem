@@ -1,5 +1,7 @@
 
 
+using DataAccess;
+using DeskBookingSystemAPI.Controllers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -8,6 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddScoped<IDataProcessor, DataProcessor>();
+builder.Services.AddScoped<IDataAccess, DataAccessProcess>();
+builder.Services.AddScoped<IGetData, GetData>();
+builder.Services.AddScoped<IDeleteData, DeleteData>();
+builder.Services.AddScoped<IInsertData, InsertData>();
+builder.Services.AddScoped<IUpdateData, UpdateData>();
+builder.Services.AddScoped<EveryoneController, EveryoneController>();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

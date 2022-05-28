@@ -16,10 +16,10 @@ namespace DeskBookingSystemAPI.Controllers
     public class LoginController : ControllerBase
     {
         private IConfiguration Configuration { get; set; }
-        public DataProcessor DataProcessor { get; set; }
-        public LoginController(IConfiguration configuration)
+        public IDataProcessor DataProcessor { get; set; }
+        public LoginController(IConfiguration configuration, IDataProcessor dataProcessor)
         {
-            DataProcessor = new();
+            DataProcessor = dataProcessor;
             Configuration = configuration;
         }
 

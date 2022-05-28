@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class DeleteData : IDeleteData
+    public class DeleteData : IDeleteData
     {
         public IDataAccess DataAccess { get; set; }
-        public DeleteData()
+        public DeleteData(IDataAccess dataAccess)
         {
-            DataAccess = new DataAccess();
+            DataAccess = dataAccess;
         }
 
         public async Task DeleteLocation(int locationID)

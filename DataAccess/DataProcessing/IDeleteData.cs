@@ -1,7 +1,7 @@
 ﻿
 namespace DataAccess
 {
-    internal interface IDeleteData
+    public interface IDeleteData
     {
         IDataAccess DataAccess { get; set; }
 

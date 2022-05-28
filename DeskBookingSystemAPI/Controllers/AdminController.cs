@@ -12,12 +12,12 @@ namespace DeskBookingSystemAPI.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-        public DataProcessor DataProcessor { get; set; }
+        public IDataProcessor DataProcessor { get; set; }
         private EveryoneController EveryoneController { get; set; }
-        public AdminController()
+        public AdminController(EveryoneController everyoneController, IDataProcessor dataProcessor)
         {
-            DataProcessor = new DataProcessor();
-            EveryoneController = new EveryoneController();
+            DataProcessor = dataProcessor;
+            EveryoneController = everyoneController;
         }
         // can't delete the location if it has any desks in it
         [HttpDelete("location/remove/{id}")]
@@ -41,8 +41,17 @@ namespace DeskBookingSystemAPI.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteDesk(int id)
         {
-            await DataProcessor.DeleteDesk(id);
-            return Ok("desk has been removed");
+            var json = await EveryoneController.GetReservations();
+            var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(json);
+            if (reservations.FirstOrDefault(x => x.DeskID == id) == null)
+            {
+                await DataProcessor.DeleteDesk(id);
+                return Ok("desk has been removed");
+            }
+            else
+            {
+                return BadRequest("desk is reserved");
+            }
         }
 
         [HttpPut("location/add/{address}/{city}")]

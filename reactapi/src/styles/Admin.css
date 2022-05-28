@@ -15,6 +15,11 @@
     box-shadow: 0px 0px 5px 1px #393838;
 }
 
+.location-div{
+    width:100%;
+    padding-right: 20px;
+}
+
 .navbar-admin{
     display: flex;
     justify-content: end;
@@ -28,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     border: 0.5px solid #393838;
     margin: 0;
     width:50%;
@@ -37,9 +42,10 @@
 }
 
 .switch{
-    height: 20%;
+    height: 10%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -67,8 +73,23 @@
     border:none;
     outline:none;
     border-radius: 10px;
-    padding: 5px 20px;
+    padding: 5px 5px;
     font-size: 25px;
+}
+
+.deskBox{
+    border-bottom: 1px solid #222222;
+    width: 100%;
+}
+
+.deskBox h1{
+    font-size: 30px;
+}
+.deskBox h2{
+    font-size: 25px;
+}
+.deskBox h1{
+    font-size: 20px;
 }
 
 .form-admin button{

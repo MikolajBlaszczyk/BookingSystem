@@ -11,16 +11,16 @@ namespace DeskBookingSystemAPI.Controllers
     [ApiController]
     public class EveryoneController : ControllerBase
     {
-        public DataProcessor DataProcessor { get; set; }
-       
+        public IDataProcessor DataProcessor { get; set; }
 
-        public EveryoneController()
+
+        public EveryoneController(IDataProcessor dataProcessor)
         {
-            DataProcessor = new DataProcessor();
+            DataProcessor = dataProcessor;
         }
 
         [HttpGet("data")]
-        [Authorize(Roles ="Admin,Employee")]
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<string> GetData()
         {
             string locations = await DataProcessor.GetAllLocations();
@@ -54,7 +54,7 @@ namespace DeskBookingSystemAPI.Controllers
 
         //?
         [HttpGet("Reservations")]
-        [Authorize(Roles ="Admin,Employee")]
+        [Authorize(Roles = "Admin,Employee")]
         public async Task<string> GetReservations()
         {
             string json = await DataProcessor.GetAllReservationsEmployee();
@@ -67,8 +67,8 @@ namespace DeskBookingSystemAPI.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<string> GetReservationsAdmin()
         {
-            string json= await DataProcessor.GetAllReservationsAdmin();
-            string results =await GroupDesks(json, true);
+            string json = await DataProcessor.GetAllReservationsAdmin();
+            string results = await GroupDesks(json, true);
             return results;
         }
 
@@ -87,9 +87,15 @@ namespace DeskBookingSystemAPI.Controllers
             string results = await DataProcessor.GetAllDesks();
             return results;
         }
+        [HttpGet("Users/{username}")]
+        [Authorize(Roles = "Employee,Admin")]
+        public async Task<string> GetUser(string username)
+        {
+            var user = await DataProcessor.GetAllUsers();
+            return JsonConvert.SerializeObject(user.FirstOrDefault(x=>x.Username == username));
+        }
 
-
-        public async Task<string> GroupDesks(string json, bool admin)
+        protected async Task<string> GroupDesks(string json, bool admin)
         {
             var desks = JsonConvert.DeserializeObject<List<DeskModel>>(await GetDesks());
             var reservation = JsonConvert.DeserializeObject<List<ReservationModel>>(json);
@@ -100,7 +106,7 @@ namespace DeskBookingSystemAPI.Controllers
                 var list = reservation.Join(desks,
                    res => res.DeskID,
                    desk => desk.ID,
-                   (res, desk) => new { IsReserved = true, UserID = res.UserID, Position = desk.Position, Monitors = desk.Monitors, LocationID = desk.LocationID });
+                   (res, desk) => new { ID=desk.ID, IsReserved = true, UserID = res.UserID, Position = desk.Position, Monitors = desk.Monitors, LocationID = desk.LocationID, Start = res.StartDate, End = res.EndDate, resID=res.ID });
                 result = JsonConvert.SerializeObject(list);
             }
             else
@@ -108,7 +114,7 @@ namespace DeskBookingSystemAPI.Controllers
                 var list = reservation.Join(desks,
                    res => res.DeskID,
                    desk => desk.ID,
-                   (res, desk) => new { IsReserved = true, Position = desk.Position, Monitors = desk.Monitors, LocationID = desk.LocationID });
+                   (res, desk) => new { ID = desk.ID, IsReserved = true, Position = desk.Position, Monitors = desk.Monitors, LocationID = desk.LocationID, Start = res.StartDate, End=res.EndDate, resID = res.ID });
                 result = JsonConvert.SerializeObject(list);
             }
             

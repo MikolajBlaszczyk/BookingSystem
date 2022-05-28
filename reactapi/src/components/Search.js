@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import BookCard from "./BookCard"
 
 export default function Search(props) {
-    const user = localStorage.getItem("Login")
+    let user = localStorage.getItem("Role")
     const [params, setParams] = React.useState({ locations: [], locationsDiv: [], displayBookCard: false, displayContent: true, ID: "" })
     const navigate = useNavigate();
 
@@ -19,7 +19,9 @@ export default function Search(props) {
             mode: "cors",
             method: "GET",
         }).then(res => res.json())
-            .then(data => setParams(prev => { return { ...prev, locations: data, locationsDiv: data } }))
+            .then(data => {
+                setParams(prev => { return { ...prev, locations: data, locationsDiv: data } })
+            })
             .catch(err => err);
 
     }, [1])
@@ -35,6 +37,9 @@ export default function Search(props) {
     </select>
     )
 
+    function handleManageClick() {
+        navigate('/Reservations', { replace: true })
+    }
     function handleSelectSearch(e) {
         let value = e.target.value;
         const newLocationDiv = params.locations.filter(x => x.NumberOfDesks >= value);
@@ -58,7 +63,6 @@ export default function Search(props) {
         let value = e.target.value;
         const newLocationDiv = params.locations.filter(x => x.Address.toLowerCase().includes(value.toLowerCase()));
 
-        console.log(params.locationsDiv);
         setParams(prev => {
             return {
                 ...prev,
@@ -70,7 +74,10 @@ export default function Search(props) {
     return (
         <div className="main">
             <div className="navbar">
-                {user === "Admin" && <div><label onClick={handleEdit}>Edit</label> </div>}
+                <div>
+                    <label onClick={handleManageClick}>Manage</label>
+                </div>
+                {user === "Admin" && <div><label onClick={handleEdit}>Edit</label></div>}
                 <div>
                     <label>{user}</label>
                 </div>
@@ -87,7 +94,7 @@ export default function Search(props) {
                 <div className="location-div">
                     {<div className="locations-cards">
                         {params.locationsDiv.length == 0 ? <h1>There are no location with this Address</h1> : params.locationsDiv.map(location => {
-                            return <LocationBox key={location.ID} obj={{ ...location, handleClick: handleCardCLick, buttonValue :"check" }} />
+                            return <LocationBox key={location.ID} obj={{ ...location, handleClick: handleCardCLick, buttonValue: "check" }} />
                         })}
                     </div>}
                 </div>

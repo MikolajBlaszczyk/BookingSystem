@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class InsertData : IInsertData
+    public class InsertData : IInsertData
     {
 
         //only for admins!!!
         public IDataAccess DataAccess { get; set; }
-        public InsertData()
+        public InsertData(IDataAccess dataAccess)
         {
-            DataAccess = new DataAccess();
+            DataAccess = dataAccess;
         }
 
         public async Task InsertLocation(string address, string city, int numberOfDesks = 0, bool allReserved = false) // last two shouldn't be touched for now

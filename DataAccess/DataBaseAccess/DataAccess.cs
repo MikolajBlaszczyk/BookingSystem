@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class DataAccess : IDataAccess
+    public class DataAccessProcess : IDataAccess
     {
 
 

@@ -2,7 +2,7 @@
 
 namespace DataAccess
 {
-    internal interface IGetData
+    public interface IGetData
     {
         IDataAccess DataAccess { get; set; }
 

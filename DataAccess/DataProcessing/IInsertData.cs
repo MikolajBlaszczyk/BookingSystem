@@ -1,7 +1,7 @@
 ﻿
 namespace DataAccess
 {
-    internal interface IInsertData
+    public interface IInsertData
     {
         IDataAccess DataAccess { get; set; }
 

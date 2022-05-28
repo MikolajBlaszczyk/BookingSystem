@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class GetData : IGetData
+    public class GetData : IGetData
     {
         public IDataAccess DataAccess { get; set; }
-        public GetData()
+        public GetData(IDataAccess dataAccess)
         {
-            DataAccess = new DataAccess();
+            DataAccess = dataAccess;
         }
 
         public async Task<List<DeskModel>> GetAllDesksAsync()
