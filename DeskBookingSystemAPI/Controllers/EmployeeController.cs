@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Security.Claims;
 
 namespace DeskBookingSystemAPI.Controllers
 {
@@ -23,35 +24,51 @@ namespace DeskBookingSystemAPI.Controllers
         //filtering
         [HttpGet("desk/{locationID}")]
         [Authorize(Roles = "Admin,Employee"  )]
+        //Option is added but frontend deals with regular data
         public async Task<IActionResult> FilterDesksByLocation(int locationID)
         {
             var desksJson = await EveryoneController.GetDesks();
             var desks = JsonConvert.DeserializeObject<List<DeskModel>>(desksJson);
             var results = JsonConvert.SerializeObject((desks.Where(x => x.LocationID == locationID).ToList()));
-            // might check if results are null but i will display empty values in frontend 
             return Ok(results);
         }
 
         //booking
-        [HttpPut("desk/book/{id}/{startDate}/{endDate}/{userID}")]
+        [HttpPut("desk/book/{id}/{startDate}/{endDate}")]
         [Authorize(Roles = "Admin,Employee")]
         //TODO should add a specified behavior when i am the one who booked it
-        public async Task<IActionResult> BookDesk(int id, string startDate, string endDate, int UserID)
+        public async Task<IActionResult> BookDesk(int id, string startDate, string endDate)
         {
-            //change it so token will recognize what id it is
+            
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var user = identity.Claims;
+            var UserID = Convert.ToInt32(user.FirstOrDefault(x => x.Type == ClaimTypes.SerialNumber)?.Value);
             DateTime stDate = Convert.ToDateTime(startDate);
             DateTime edDate = Convert.ToDateTime(endDate);
+            bool validate = await CheckReservationDays(UserID, stDate, edDate, id);
+            if (validate == false)
+            {
+                if (edDate == stDate)
+                {
+                    return BadRequest("You can't book desk for 0 days");
+                }
+                return BadRequest("You can't book desk for more than a week");
+            }
             var reservationsJson = await DataProcessor.GetAllReservationsEmployee();
             var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(reservationsJson);
             reservations =  reservations.Where(x => x.DeskID == id).ToList();
             if ((edDate - stDate).Days <= 7)
             {
-                if (reservations.Count == 0 || (reservations.Count(x=> ((Convert.ToDateTime(x.StartDate) <= stDate && edDate<= Convert.ToDateTime(x.EndDate)) ||
+                if (reservations.Count == 0 || (reservations.Count(x => ((Convert.ToDateTime(x.StartDate) <= stDate && edDate <= Convert.ToDateTime(x.EndDate)) ||
                 (Convert.ToDateTime(x.StartDate) <= edDate && edDate <= Convert.ToDateTime(x.EndDate)) ||
                 (Convert.ToDateTime(x.StartDate) <= stDate && stDate <= Convert.ToDateTime(x.EndDate)))) == 0))
                 {
                     await DataProcessor.InsertDeskReservation(UserID, id, startDate, endDate);
-                    return Ok($"you've booked a {id} desk");
+                    return Ok($"you've booked a desk {id}");
+                }
+                else if (reservations.FirstOrDefault(x => x.DeskID == id).UserID == UserID)
+                {
+                    return BadRequest("You have booked it previously");
                 }
                 else
                 {
@@ -61,17 +78,80 @@ namespace DeskBookingSystemAPI.Controllers
             return BadRequest("You can't book a desk for more than 7 days");
         }
         //swapping TODO!!!
-        [HttpPut("desk/book/change/{oldID}/{newID}/{startDate}/{endDate}/{userID}")]
+        [HttpPut("desk/book/change/{oldID}/{newID}/{startDate}/{endDate}/{resID}")]
         [Authorize(Roles = "Admin,Employee")]
-        public async Task SwapDesks(int oldID, int newID, string startDate, string endDate,string oldStartDate)
+        public async Task<IActionResult> SwapDesks(int oldID, int newID, string startDate, string endDate, int resID)
         {
+
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var user = identity.Claims;
+            var userID = Convert.ToInt32(user.FirstOrDefault(x => x.Type == ClaimTypes.SerialNumber)?.Value);
+            var res = await DataProcessor.GetAllReservationsAdmin();
+            var list = JsonConvert.DeserializeObject<List<ReservationModel>>(res);
             DateTime stDate = Convert.ToDateTime(startDate);
             DateTime edDate = Convert.ToDateTime(endDate);
-            DateTime oldstDate =Convert.ToDateTime(oldStartDate);
-            if (((edDate - stDate).Days <= 7) && (oldstDate- DateTime.Now).Days !=0)
+            bool validate = await CheckReservationDays(userID, stDate, edDate, newID);
+            if (validate == false)
             {
-               
+                if (edDate == stDate)
+                {
+                    return BadRequest("You can't book desk for 0 days");
+                }
+                return BadRequest("You can't book desk for more than a week");
+            }
+            string oldStartDate = list.FirstOrDefault(x => x.ID == resID).StartDate.ToString();
+            string oldEndDate = list.FirstOrDefault(x => x.ID == resID).EndDate.ToString();
+            DateTime oldstDate =Convert.ToDateTime(oldStartDate);
+            DateTime oldEdDate = Convert.ToDateTime(oldEndDate);
+            if (oldEdDate == edDate && oldstDate == stDate)
+            {
+                return BadRequest("Nothing was changed because dates of reservation are the same as previous");
+            }
+            var reservationsJson = await DataProcessor.GetAllReservationsEmployee();
+            var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(reservationsJson);
+            reservations = reservations.Where(x => x.DeskID == newID).ToList();
+            if (((edDate - stDate).Days <= 7) && (oldstDate - DateTime.Now).Days > 0)
+            {
+                    await DataProcessor.DeleteReservation(list.FirstOrDefault(x => x.ID == resID).ID);
+                    await DataProcessor.InsertDeskReservation(userID, newID, startDate, endDate);
+                    return Ok("Reservation Changed");
+            }
+            else if((edDate - stDate).Days > 7)
+            {
+                return BadRequest("You can't book a desk for more than 7 days");
+            }
+            else
+            {
+                return BadRequest("you can't swap a desk less than 24 hours before reservation starts");
             }
         }
+
+        public async Task<bool> CheckReservationDays(int userID,DateTime newStart, DateTime newEnd, int deskID)
+        {
+            var json = await DataProcessor.GetAllReservationsAdmin();
+            var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(json);
+            var usersReservations = reservations.Where(x => x.UserID == userID && x.DeskID == deskID);
+            int days = 0; 
+            foreach (var reservation in usersReservations)
+            {
+                DateTime start = Convert.ToDateTime(reservation.StartDate);
+                DateTime end = Convert.ToDateTime(reservation.EndDate);
+                days += (end - start).Days;
+            }
+            days += (newEnd-newStart).Days;
+            if (newEnd == newStart)
+            {
+                return false;
+            }
+            if (days > 7)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        
     }
 }

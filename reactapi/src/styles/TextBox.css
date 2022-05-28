@@ -1,0 +1,18 @@
+div{
+    margin:10px;
+}
+
+.textbox input {
+    padding: 20px;
+    border:none;
+    border-radius: 20px;
+    font-size:30px;
+    color: #222222;
+    outline:none;
+    transition: transform 0.5s;
+}
+
+.textbox input:hover{
+    transform:scale(1.02);
+    transition:transform 0.2s;
+}

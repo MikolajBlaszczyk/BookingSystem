@@ -1,0 +1,25 @@
+.content-locationbox{
+    display: flex;
+    border-bottom: 0.5px solid #4d4d4da7;
+    padding-left: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.content-locationbox button{
+    margin-right:1rem;
+    width: 7rem;
+    outline: none;
+    border: none;
+    background-color: #4d4d4d;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    border-radius: 20px;
+    color: #FFFFFF;
+    transition: background-color 0.5s, transform 0.2s;
+}
+
+.content-locationbox button:hover{
+    background-color: #272727 ;
+    transform: scale(1.2);
+}

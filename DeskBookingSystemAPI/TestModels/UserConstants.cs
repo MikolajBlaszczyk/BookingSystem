@@ -6,20 +6,16 @@
         {
             new UserModel()
             {
+                ID= 2,
                 Username = "Admin",
-                EmailAddress= "admin@email.com",
                 Password = "password123",
-                GivenName = "Mikolaj",
-                Surname = "Blaszczyk",
                 Role="Admin"
             },
             new UserModel()
             {
+                ID= 1,
                 Username = "Employee",
-                EmailAddress = "employee@email.com",
                 Password = "password123",
-                GivenName = "John",
-                Surname = "Doe",
                 Role="Employee"
             }
         };

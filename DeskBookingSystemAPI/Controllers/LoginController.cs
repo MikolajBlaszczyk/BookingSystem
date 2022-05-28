@@ -1,4 +1,5 @@
-﻿using DeskBookingSystemAPI.TestModels;
+﻿using DataAccess;
+using DeskBookingSystemAPI.TestModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,16 +16,18 @@ namespace DeskBookingSystemAPI.Controllers
     public class LoginController : ControllerBase
     {
         private IConfiguration Configuration { get; set; }
+        public DataProcessor DataProcessor { get; set; }
         public LoginController(IConfiguration configuration)
         {
+            DataProcessor = new();
             Configuration = configuration;
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login([FromBody] UserLogin userLogin)
+        public async Task<IActionResult> Login([FromBody] UserLogin userLogin)
         {
-            var user = Authenticate(userLogin);
+            var user = await Authenticate(userLogin);
 
             if (user is not null)
             {
@@ -36,22 +39,26 @@ namespace DeskBookingSystemAPI.Controllers
         }
 
         //searching user 
-        private UserModel Authenticate(UserLogin userLogin)
+        private async Task<DataAccess.Models.UserModel> Authenticate(UserLogin userLogin)
         {
-            var currentUser = UserConstants.Users.FirstOrDefault( user => 
-                user.Username.ToLower()== userLogin.Username.ToLower() &&
-                user.Password == userLogin.Password);
+            List<DataAccess.Models.UserModel> currentUserList = await DataProcessor.GetAllUsers();
+            var currentUser = currentUserList.FirstOrDefault(user =>
+                 user.Username.ToLower() == userLogin.Username.Trim().ToLower() && user.Password == userLogin.Password.Trim().ToLower());
+            
+            //var currentUser = UserConstants.Users.FirstOrDefault( user => 
+            //    user.Username.ToLower()== userLogin.Username.ToLower() &&
+            //    user.Password == userLogin.Password);
             
             if (currentUser is not null)
             {
                 return currentUser;
             }
             // if we don't find user
-            return null;
+            return currentUser;
         }
 
         //generating token
-        private string GenerateToken(UserModel user)
+        private string GenerateToken(DataAccess.Models.UserModel user)
         {
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]));
             SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -59,10 +66,8 @@ namespace DeskBookingSystemAPI.Controllers
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Username),
-                new Claim(ClaimTypes.Email, user.EmailAddress),
-                new Claim(ClaimTypes.GivenName, user.GivenName),
-                new Claim(ClaimTypes.Surname, user.Surname),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.SerialNumber, user.ID.ToString()),
+                new Claim(ClaimTypes.Role, user.Role),
             };
 
             JwtSecurityToken token = new JwtSecurityToken(Configuration["Jwt:Issuer"], Configuration["Jwt:Audience"], claims, expires: DateTime.Now.AddMinutes(15), signingCredentials: credentials);

@@ -1,0 +1,366 @@
+﻿++Rozwiązanie „DeskBookingSystemAPI” ‎ (3 z 3 projektów)
+i:{00000000-0000-0000-0000-000000000000}:DeskBookingSystemAPI.sln
+++DeskBookingSystemAPI
+i:{00000000-0000-0000-0000-000000000000}:DeskBookingSystemAPI
+++Connected Services 
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:>351
+++Properties
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\properties\
+++Zależności
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:>350
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:>249
+++Controllers
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\controllers\
+++AdminController.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\controllers\admincontroller.cs
+++EmployeeController.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\controllers\employeecontroller.cs
+++EveryoneController.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\controllers\everyonecontroller.cs
+++LoginController.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\controllers\logincontroller.cs
+++Models
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\models\
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\models\
+++DeskModel.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\models\deskmodel.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\models\deskmodel.cs
+++LocationModel.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\models\locationmodel.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\models\locationmodel.cs
+++TestModels
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\testmodels\
+++appsettings.json
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\appsettings.json
+++Program.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\program.cs
+++Nie odnaleziono zależności usługi
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:>352
+++launchSettings.json
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\properties\launchsettings.json
+++Analizatory
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:analizatory
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:analizatory
+++Pakiety
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:pakiety
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:pakiety
+++Projekty
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:projekty
+++Struktury
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:struktury
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:struktury
+++UserConstants.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\testmodels\userconstants.cs
+++UserLogin.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\testmodels\userlogin.cs
+++UserModel.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\testmodels\usermodel.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\models\usermodel.cs
+++appsettings.Development.json
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.5\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.5\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.5\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\sdk\6.0.203\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.5\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.5\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.5)
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:>381
+++Microsoft.IdentityModel.Tokens (6.18.0)
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:>382
+++Swashbuckle.AspNetCore (6.2.3)
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:>380
+++System.IdentityModel.Tokens.Jwt (6.18.0)
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:>379
+++DataAccess
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataaccess.csproj
+i:{00000000-0000-0000-0000-000000000000}:DataAccess
+++Microsoft.AspNetCore.App
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\microsoft.netcore.app
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\microsoft.netcore.app
+++DataBaseAccess
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\databaseaccess\
+++DataProcessing
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\
+++DeleteData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\deletedata.cs
+++GetData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\getdata.cs
+++IDeleteData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\ideletedata.cs
+++IGetData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\igetdata.cs
+++IInsertData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\iinsertdata.cs
+++InsertData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\insertdata.cs
+++IUpdateData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\iupdatedata.cs
+++UpdateData.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessing\updatedata.cs
+++ReservationModel.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\models\reservationmodel.cs
+i:{0965e4cd-5127-4734-896e-0f8f9aaa6734}:d:\software mind\rekrutacja\deskbookingsystemapi\deskbookingsystemapi\models\reservationmodel.cs
+++DataProcessor.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\dataprocessor.cs
+++DataAccess.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\databaseaccess\dataaccess.cs
+++IDataAccess.cs
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:d:\software mind\rekrutacja\deskbookingsystemapi\dataaccess\databaseaccess\idataaccess.cs
+++Dapper (2.0.123)
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:>367
+++Newtonsoft.Json (13.0.1)
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:>366
+++System.Data.SqlClient (4.8.3)
+i:{1a216547-4464-48fa-a7e8-2fb91fed06c3}:>368
+++Logic
+++FrontendMapping
+++Rozwiązanie „DeskBookingSystemAPI” ‎ (4 z 4 projektów)
+++UI
+++ClientApp
+++Pages
+++.gitignore
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.gitignore
+++WeatherForecast.cs
+++public
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\public\
+++src
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\
+++.env
+++aspnetcore-https.js
+++aspnetcore-react.js
+++package.json
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\package.json
+++README.md
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\readme.md
+++WeatherForecastController.cs
+++_ViewImports.cshtml
+++Error.cshtml
+++favicon.ico
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\public\favicon.ico
+++index.html
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\public\index.html
+++manifest.json
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\public\manifest.json
+++components
+++App.js
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\app.js
+++custom.css
+++index.js
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\index.js
+++reportWebVitals.js
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\reportwebvitals.js
+++service-worker.js
+++serviceWorkerRegistration.js
+++setupProxy.js
+++.env.development
+++package-lock.json
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\package-lock.json
+++Error.cshtml.cs
+++Counter.js
+++FetchData.js
+++Home.js
+++Layout.js
+++NavMenu.css
+++NavMenu.js
+++App.test.js
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\app.test.js
+++C:\Program Files\dotnet\sdk\6.0.203\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.203\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Components.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.203\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Mvc.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.203\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.203\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.NetAnalyzers.dll
+++Microsoft.AspNetCore.SpaProxy (6.0.5)
+++ReactUI (ładowanie...)
+++Ten projekt jest nadal ładowany...
+++ReactUI
+i:{00000000-0000-0000-0000-000000000000}:ReactUI
+++npm
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:>80493
+++.git
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\
+++hooks
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\
+++info
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\info\
+++logs
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\logs\
+++objects
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\
+++refs
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\refs\
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\logs\refs\
+++COMMIT_EDITMSG
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\commit_editmsg
+++config
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\config
+++description
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\description
+++HEAD
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\head
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\logs\head
+++index
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\index
+++applypatch-msg.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\applypatch-msg.sample
+++commit-msg.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\commit-msg.sample
+++fsmonitor-watchman.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\fsmonitor-watchman.sample
+++post-update.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\post-update.sample
+++pre-applypatch.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\pre-applypatch.sample
+++pre-commit.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\pre-commit.sample
+++pre-merge-commit.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\pre-merge-commit.sample
+++prepare-commit-msg.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\prepare-commit-msg.sample
+++pre-push.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\pre-push.sample
+++pre-rebase.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\pre-rebase.sample
+++pre-receive.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\pre-receive.sample
+++push-to-checkout.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\push-to-checkout.sample
+++update.sample
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\hooks\update.sample
+++exclude
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\info\exclude
+++08
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\08\
+++1e
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\1e\
+++1f
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\1f\
+++37
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\37\
+++44
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\44\
+++48
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\48\
+++4d
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\4d\
+++52
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\52\
+++58
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\58\
+++74
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\74\
+++7b
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\7b\
+++8e
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\8e\
+++8f
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\8f\
+++9d
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\9d\
+++a1
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\a1\
+++a4
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\a4\
+++aa
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\aa\
+++cc
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\cc\
+++d5
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\d5\
+++e9
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\e9\
+++ec
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\ec\
+++fc
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\fc\
+++heads
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\refs\heads\
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\logs\refs\heads\
+++0d6c77ac21bb2ef88a6992b2b73ad93daaca92
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\08\0d6c77ac21bb2ef88a6992b2b73ad93daaca92
+++d8d73f41da0c058fae3bc94595053827110607
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\1e\d8d73f41da0c058fae3bc94595053827110607
+++03afeece5ac28064fa3c73a29215037465f789
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\1f\03afeece5ac28064fa3c73a29215037465f789
+++845757234ccb68531c10cf7a2ffc589c47e342
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\37\845757234ccb68531c10cf7a2ffc589c47e342
+++64293089e1b3971e020acc4dd646e765e51caa
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\44\64293089e1b3971e020acc4dd646e765e51caa
+++8c80fafdccef21ea535405edc374e813863062
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\48\8c80fafdccef21ea535405edc374e813863062
+++29575de80483b005c29bfcac5061cd2f45313e
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\4d\29575de80483b005c29bfcac5061cd2f45313e
+++53d3ad9e6be6690549cb255f5952337b02401d
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\52\53d3ad9e6be6690549cb255f5952337b02401d
+++beeaccd87e230076cab531b8f418f40b6d1aeb
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\58\beeaccd87e230076cab531b8f418f40b6d1aeb
+++b5e053450a48a6bdb4d71aad648e7af821975c
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\74\b5e053450a48a6bdb4d71aad648e7af821975c
+++1e172334cdc980bee9ad6a8a87cf21e0ed18d8
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\7b\1e172334cdc980bee9ad6a8a87cf21e0ed18d8
+++29b36dea7f04ae8729d8b33ecc05c3c9b0fe46
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\8e\29b36dea7f04ae8729d8b33ecc05c3c9b0fe46
+++2609b7b3e0e3897ab3bcaad13caf6876e48699
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\8f\2609b7b3e0e3897ab3bcaad13caf6876e48699
+++fc1c058cebbef8b891c5062be6f31033d7d186
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\9d\fc1c058cebbef8b891c5062be6f31033d7d186
+++1777cc471a4344702741ab1c8a588998b1311a
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\a1\1777cc471a4344702741ab1c8a588998b1311a
+++e47a6545bc15971f8f63fba70e4013df88a664
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\a4\e47a6545bc15971f8f63fba70e4013df88a664
+++069f27cbd9d53394428171c3989fd03db73c76
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\aa\069f27cbd9d53394428171c3989fd03db73c76
+++105e63b9fbc182a5ba3da12fe3fede2cc1a5d3
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\cc\105e63b9fbc182a5ba3da12fe3fede2cc1a5d3
+++63c0fb10ba0e42724b21286eb546ee4e5734fc
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\d5\63c0fb10ba0e42724b21286eb546ee4e5734fc
+++e57dc4d41b9b46e05112e9f45b7ea6ac0ba15e
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\e9\e57dc4d41b9b46e05112e9f45b7ea6ac0ba15e
+++2585e8c0bb8188184ed1e0703c4c8f2a8419b0
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\ec\2585e8c0bb8188184ed1e0703c4c8f2a8419b0
+++44b0a3796c0e0a64c3d858ca038bd4570465d9
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\objects\fc\44b0a3796c0e0a64c3d858ca038bd4570465d9
+++master
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\refs\heads\master
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.git\logs\refs\heads\master
+++.vscode
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.vscode\
+++launch.json
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\.vscode\launch.json
+++logo192.png
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\public\logo192.png
+++logo512.png
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\public\logo512.png
+++robots.txt
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\public\robots.txt
+++App.css
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\app.css
+++index.css
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\index.css
+++logo.svg
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\logo.svg
+++setupTests.js
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\src\setuptests.js
+++nuget.config
+i:{f5b64e2e-cd07-4820-b77e-328c393a86e8}:d:\software mind\rekrutacja\deskbookingsystemapi\reactui\nuget.config

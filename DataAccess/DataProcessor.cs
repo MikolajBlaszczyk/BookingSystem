@@ -93,5 +93,11 @@ namespace DataAccess
         {
             await InsertData.InsertReservation(userID, deskID, startDate, endDate);
         }
+
+        public async Task<List<UserModel>> GetAllUsers()
+        {
+            var obj = await GetData.GetAllUsersAsync();
+            return obj;
+        }
     }
 }

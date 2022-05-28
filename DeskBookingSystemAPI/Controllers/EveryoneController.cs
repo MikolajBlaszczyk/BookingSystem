@@ -20,7 +20,7 @@ namespace DeskBookingSystemAPI.Controllers
         }
 
         [HttpGet("data")]
-        [Authorize]
+        [Authorize(Roles ="Admin,Employee")]
         public async Task<string> GetData()
         {
             string locations = await DataProcessor.GetAllLocations();
@@ -37,7 +37,7 @@ namespace DeskBookingSystemAPI.Controllers
             List<LocationModel> output = new();
             foreach (var locations in listOfLocations)
             {
-                var locationsDesk = listOfDesks.Where(x => x.ID == locations.ID).ToList();
+                var locationsDesk = listOfDesks.Where(x => x.LocationID == locations.ID).ToList();
                 output.Add(new LocationModel
                 {
                     ID = locations.ID,
@@ -53,13 +53,25 @@ namespace DeskBookingSystemAPI.Controllers
 
 
         //?
-        [HttpGet]
-        [Authorize]
+        [HttpGet("Reservations")]
+        [Authorize(Roles ="Admin,Employee")]
         public async Task<string> GetReservations()
         {
-            string results = await DataProcessor.GetAllReservationsEmployee();
+            string json = await DataProcessor.GetAllReservationsEmployee();
+            string results = await GroupDesks(json, false);
             return results;
         }
+
+
+        [HttpGet("Reservations/Admin")]
+        [Authorize(Roles = "Admin")]
+        public async Task<string> GetReservationsAdmin()
+        {
+            string json= await DataProcessor.GetAllReservationsAdmin();
+            string results =await GroupDesks(json, true);
+            return results;
+        }
+
         [HttpGet("locations")]
         [Authorize]
         public async Task<string> GetLocations()
@@ -76,6 +88,32 @@ namespace DeskBookingSystemAPI.Controllers
             return results;
         }
 
+
+        public async Task<string> GroupDesks(string json, bool admin)
+        {
+            var desks = JsonConvert.DeserializeObject<List<DeskModel>>(await GetDesks());
+            var reservation = JsonConvert.DeserializeObject<List<ReservationModel>>(json);
+            List<DeskModel> groupedDesks = new();
+            string result;
+            if (admin is true)
+            {
+                var list = reservation.Join(desks,
+                   res => res.DeskID,
+                   desk => desk.ID,
+                   (res, desk) => new { IsReserved = true, UserID = res.UserID, Position = desk.Position, Monitors = desk.Monitors, LocationID = desk.LocationID });
+                result = JsonConvert.SerializeObject(list);
+            }
+            else
+            {
+                var list = reservation.Join(desks,
+                   res => res.DeskID,
+                   desk => desk.ID,
+                   (res, desk) => new { IsReserved = true, Position = desk.Position, Monitors = desk.Monitors, LocationID = desk.LocationID });
+                result = JsonConvert.SerializeObject(list);
+            }
+            
+            return result;
+        }
        
     }
 }
