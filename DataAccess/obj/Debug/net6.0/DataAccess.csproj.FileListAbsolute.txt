@@ -10,3 +10,5 @@ D:\software Mind\Rekrutacja\DeskBookingSystemAPI\DataAccess\obj\Debug\net6.0\Dat
 D:\software Mind\Rekrutacja\DeskBookingSystemAPI\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 D:\software Mind\Rekrutacja\DeskBookingSystemAPI\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\software Mind\Rekrutacja\DeskBookingSystemAPI\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
+D:\software Mind\Rekrutacja\DeskBookingSystemAPI\DataAccess\bin\Debug\net6.0\DataAccess.runtimeconfig.json
+D:\software Mind\Rekrutacja\DeskBookingSystemAPI\DataAccess\obj\Debug\net6.0\DataAccess.genruntimeconfig.cache

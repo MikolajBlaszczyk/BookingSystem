@@ -134,7 +134,7 @@ namespace DeskBookingSystemAPI.Controllers
             return Ok("reservation deleted");
         }
 
-        protected async Task<bool> CheckReservationDays(int userID,DateTime newStart, DateTime newEnd, int deskID)
+        internal async Task<bool> CheckReservationDays(int userID,DateTime newStart, DateTime newEnd, int deskID)
         {
             var json = await DataProcessor.GetAllReservationsAdmin();
             var reservations = JsonConvert.DeserializeObject<List<ReservationModel>>(json);

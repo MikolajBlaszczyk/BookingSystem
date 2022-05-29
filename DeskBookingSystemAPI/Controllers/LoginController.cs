@@ -23,10 +23,12 @@ namespace DeskBookingSystemAPI.Controllers
             Configuration = configuration;
         }
 
+
         [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login([FromBody] UserLogin userLogin)
         {
+            
             var user = await Authenticate(userLogin);
 
             if (user is not null)
@@ -41,14 +43,14 @@ namespace DeskBookingSystemAPI.Controllers
         //searching user 
         private async Task<DataAccess.Models.UserModel> Authenticate(UserLogin userLogin)
         {
+            //In normal app I wouldn't store user's password. I would use a PasswordHasher!
+            
             List<DataAccess.Models.UserModel> currentUserList = await DataProcessor.GetAllUsers();
             var currentUser = currentUserList.FirstOrDefault(user =>
                  user.Username.ToLower() == userLogin.Username.Trim().ToLower() && user.Password == userLogin.Password.Trim().ToLower());
-            
             //var currentUser = UserConstants.Users.FirstOrDefault( user => 
             //    user.Username.ToLower()== userLogin.Username.ToLower() &&
             //    user.Password == userLogin.Password);
-            
             if (currentUser is not null)
             {
                 return currentUser;

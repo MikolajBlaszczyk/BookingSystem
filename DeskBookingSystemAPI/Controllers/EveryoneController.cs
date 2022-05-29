@@ -12,8 +12,6 @@ namespace DeskBookingSystemAPI.Controllers
     public class EveryoneController : ControllerBase
     {
         public IDataProcessor DataProcessor { get; set; }
-
-
         public EveryoneController(IDataProcessor dataProcessor)
         {
             DataProcessor = dataProcessor;
