@@ -18,7 +18,6 @@ namespace DataAccess
         {
             Configuration = configuration;
             ConnectionString =  Configuration.GetConnectionString("Default");
-            ConnectionString = @"Data Source=MIKOŁAJ\SQLEXPRESS;Initial Catalog=SoftwareMind;User ID=MikolajBlaszczyk;Password=408404";
         }
 
         //Getting the Data with additional requirements
