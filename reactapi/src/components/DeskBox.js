@@ -22,7 +22,6 @@ export default function DeskBox(props) {
             }
         })
     }
-
     async function DeleteReservation() {
         const token = localStorage.getItem("Jwt");
         fetch(`/api/Employee/Delete/${props.obj.resID}`,
@@ -37,7 +36,6 @@ export default function DeskBox(props) {
             .then(res => { console.log(res.statusText) })
         props.obj.resChange(props.obj.ID);
     }
-
     async function Submit(e) {
         e.preventDefault();
 

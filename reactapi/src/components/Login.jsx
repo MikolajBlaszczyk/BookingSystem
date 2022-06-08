@@ -6,7 +6,8 @@ import "../styles/Login.css"
 export default function Login(props) {
     const [loginParams, setLoginParams] = React.useState({
         Login: "",
-        Password: ""
+        Password: "",
+        ErrorMessage: false
     })
     let navigate = useNavigate();
 
@@ -32,24 +33,31 @@ export default function Login(props) {
                 method: "POST",
                 body: JSON.stringify({ "username": loginParams.Login, "password": loginParams.Password })
             })
-            .then(res => res.text())
+            .then(res => {
+                if (res.ok) {
+                    return res.text()
+                }
+                else {
+                    setLoginParams(prev => {
+                        return {
+                            ...prev,
+                            Login: "",
+                            Password: ""
+                        }
+                    })
+                    throw new Error('Error')
+                }
+            })
             .then(data => {
                 if (data != "") {
                     localStorage.setItem("Jwt", data);
                     token = data;
                     return data;
                 }
-                else {
-
-                }
             })
             .then(data => {
-                if (data != "User couldn't be found") {
-                    navigate("/Logged", { replace: true });
-                }
-                else {
-                    throw new Error('something went wrong');
-                }
+                navigate("/Logged", { replace: true });
+                return data;
             })
             .then(() => {
                 fetch(`/api/Everyone/Users/${loginParams.Login}`,
@@ -65,9 +73,22 @@ export default function Login(props) {
                         localStorage.setItem("Role", data.Role)
                     })
             })
-            .catch(err => err);
-
-
+            .catch(err => {
+                setLoginParams((prev) => {
+                    return {
+                        ...prev,
+                        ErrorMessage: !prev.ErrorMessage
+                    }
+                })
+                setTimeout(() => {
+                    setLoginParams((prev) => {
+                        return {
+                            ...prev,
+                            ErrorMessage: !prev.ErrorMessage
+                        }
+                    })
+                }, 3900)
+            });
     }
 
 
@@ -77,6 +98,7 @@ export default function Login(props) {
     return (
         <div className='main-div'>
             <form method="Post" onSubmit={handleSubmit}>
+                {loginParams.ErrorMessage == true && <label className='login-label'>Wrong password or login</label>}
                 <TextBox obj={firstFlexBox} />
                 <TextBox obj={secondFlexBox} />
                 <button className='submit-button' >Submit</button>

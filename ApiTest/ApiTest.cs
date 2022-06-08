@@ -10,8 +10,6 @@ namespace ApiTest
 {
     public class ApiTest
     {
-       
-
         [Fact]
         public async void TestEveryone()
         {
@@ -20,7 +18,6 @@ namespace ApiTest
                 mock.Mock<IDataProcessor>()
                     .Setup(x => x.GetAllDesks())
                     .Returns(Task.FromResult(GetSampleDesks()));
-
 
                 var apiController = mock.Create<EveryoneController>();
 

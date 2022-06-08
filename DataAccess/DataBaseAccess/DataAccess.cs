@@ -17,7 +17,7 @@ namespace DataAccess
         public DataAccessProcess(IConfiguration configuration)
         {
             Configuration = configuration;
-            ConnectionString =  Configuration.GetConnectionString("Default");
+            ConnectionString = Configuration.GetConnectionString("Default");
         }
 
         //Getting the Data with additional requirements

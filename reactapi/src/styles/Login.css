@@ -1,3 +1,4 @@
+
 body {
     background-color: #ffffff; 
 }
@@ -19,7 +20,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#424656;
+    background-color:#3f3f3f;
     border-radius: 20px;
     border: 2px solid #222222;
     font-size: 30px;
@@ -42,3 +43,19 @@ body {
     transform:scale(1.02);
     transition:transform 0.2s;
 }
+
+.login-label{
+    position: relative;
+    font-family: Lato;
+    font-weight: 600;
+    color:#ff3c3c;
+    margin-bottom: 10px;
+    animation: LabelAnimation 4s ease ;
+}
+@keyframes LabelAnimation{
+    0%{opacity: 0%; font-size: 0px;}
+    5%{transform: translateY(-80px) scale(150%); opacity: 100%; font-size: 30px;}
+    70%{transform: translateY(-80px) scale(150%); opacity: 100%; font-size: 30px;}
+    100%{transform: translateY(0px) scale(0%);opacity: 0%; font-size: 0px;}
+}
+

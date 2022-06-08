@@ -50,7 +50,6 @@ export default function Search(props) {
             }
         })
     }
-
     function handleCardCLick(id) {
         setParams(prev => { return { ...prev, displayBookCard: (!prev.displayBookCard), displayContent: (!prev.displayContent), ID: id } })
 
@@ -58,7 +57,6 @@ export default function Search(props) {
     function handleEdit() {
         navigate('/Admin', { replace: true })
     }
-
     function handleAddressSearch(e) {
         let value = e.target.value;
         const newLocationDiv = params.locations.filter(x => x.Address.toLowerCase().includes(value.toLowerCase()));
